@@ -1,0 +1,130 @@
+{
+  "rows": [
+    {
+      "group": "candidate",
+      "channel": "搜索",
+      "date": "2026-11-17",
+      "reach": 1000,
+      "log_clicks": 120
+    },
+    {
+      "group": "candidate",
+      "channel": "搜索",
+      "date": "2026-11-18",
+      "reach": 1000,
+      "log_clicks": 900
+    },
+    {
+      "group": "candidate",
+      "channel": "搜索",
+      "date": "2026-11-19",
+      "reach": 1000,
+      "log_clicks": 950
+    },
+    {
+      "group": "candidate",
+      "channel": "信息流",
+      "date": "2026-11-17",
+      "reach": 800,
+      "log_clicks": 700
+    },
+    {
+      "group": "candidate",
+      "channel": "信息流",
+      "date": "2026-11-18",
+      "reach": 800,
+      "log_clicks": 750
+    },
+    {
+      "group": "candidate",
+      "channel": "信息流",
+      "date": "2026-11-19",
+      "reach": 800,
+      "log_clicks": 760
+    },
+    {
+      "group": "candidate",
+      "channel": "社交",
+      "date": "2026-11-17",
+      "reach": 600,
+      "log_clicks": 500
+    },
+    {
+      "group": "candidate",
+      "channel": "社交",
+      "date": "2026-11-18",
+      "reach": 600,
+      "log_clicks": 520
+    },
+    {
+      "group": "candidate",
+      "channel": "社交",
+      "date": "2026-11-19",
+      "reach": 600,
+      "log_clicks": 540
+    },
+    {
+      "group": "control",
+      "channel": "搜索",
+      "date": "2026-11-17",
+      "reach": 1000,
+      "log_clicks": 110
+    },
+    {
+      "group": "control",
+      "channel": "搜索",
+      "date": "2026-11-18",
+      "reach": 1000,
+      "log_clicks": 880
+    },
+    {
+      "group": "control",
+      "channel": "搜索",
+      "date": "2026-11-19",
+      "reach": 1000,
+      "log_clicks": 930
+    },
+    {
+      "group": "control",
+      "channel": "信息流",
+      "date": "2026-11-17",
+      "reach": 800,
+      "log_clicks": 690
+    },
+    {
+      "group": "control",
+      "channel": "信息流",
+      "date": "2026-11-18",
+      "reach": 800,
+      "log_clicks": 740
+    },
+    {
+      "group": "control",
+      "channel": "信息流",
+      "date": "2026-11-19",
+      "reach": 800,
+      "log_clicks": 750
+    },
+    {
+      "group": "control",
+      "channel": "社交",
+      "date": "2026-11-17",
+      "reach": 600,
+      "log_clicks": 490
+    },
+    {
+      "group": "control",
+      "channel": "社交",
+      "date": "2026-11-18",
+      "reach": 600,
+      "log_clicks": 510
+    },
+    {
+      "group": "control",
+      "channel": "社交",
+      "date": "2026-11-19",
+      "reach": 600,
+      "log_clicks": 530
+    }
+  ]
+}

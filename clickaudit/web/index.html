@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>点击审计批次台 · 双计数真实点击上下界</title>
+<link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+<header>
+  <h1>点击审计批次台</h1>
+  <p class="sub">日志点击存在误触；真实点击必须同时满足<b>渠道审计</b>与<b>日期审计</b>两套计数，
+  且每格不超过 <code>min(触达, 日志点击)</code>。系统求候选−对照点击率差的最紧上下界，并给出达到两端的整数分配。</p>
+</header>
+
+<main>
+  <section class="card">
+    <h2>1. 批次</h2>
+    <div class="row">
+      <input id="note" placeholder="批次备注（可选）" />
+      <button id="btn-create">新建批次</button>
+      <button id="btn-refresh" class="ghost">刷新列表</button>
+    </div>
+    <table class="grid">
+      <thead><tr><th>批次</th><th>状态</th><th>三份数据</th><th>备注</th><th>父批次</th><th>创建时间</th><th></th></tr></thead>
+      <tbody id="batch-rows"></tbody>
+    </table>
+  </section>
+
+  <section class="card" id="work-card" hidden>
+    <h2>2. 数据补交（三份同批齐全才冻结）</h2>
+    <p class="hint">当前批次：<b id="cur-batch"></b>
+      状态：<span id="cur-status"></span></p>
+    <div class="tabs">
+      <button data-tab="cells" class="tab active">触达+日志点击明细</button>
+      <button data-tab="channel_audit" class="tab">渠道审计</button>
+      <button data-tab="date_audit" class="tab">日期审计</button>
+    </div>
+
+    <div class="tabpane" data-pane="cells">
+      <p class="hint">每行：组 <code>candidate/control</code>、渠道、日期、触达、日志点击。
+        也可粘贴整段 JSON（<code>{"rows":[...]}</code>）。</p>
+      <div id="cells-editor" class="editor"></div>
+      <div class="row">
+        <button data-addrow="cells">+ 行</button>
+        <button data-submit="cells">提交本份</button>
+        <label class="ghost">导入 JSON 文件：<input type="file" data-import="cells" accept=".json,application/json" /></label>
+      </div>
+    </div>
+
+    <div class="tabpane" data-pane="channel_audit" hidden>
+      <p class="hint">每行：渠道、有效点击数。</p>
+      <div id="channel_audit-editor" class="editor"></div>
+      <div class="row">
+        <button data-addrow="channel_audit">+ 行</button>
+        <button data-submit="channel_audit">提交本份</button>
+        <label class="ghost">导入 JSON：<input type="file" data-import="channel_audit" accept=".json,application/json" /></label>
+      </div>
+    </div>
+
+    <div class="tabpane" data-pane="date_audit" hidden>
+      <p class="hint">每行：日期、有效点击数。</p>
+      <div id="date_audit-editor" class="editor"></div>
+      <div class="row">
+        <button data-addrow="date_audit">+ 行</button>
+        <button data-submit="date_audit">提交本份</button>
+        <label class="ghost">导入 JSON：<input type="file" data-import="date_audit" accept=".json,application/json" /></label>
+      </div>
+    </div>
+    <div id="submit-msg" class="msg"></div>
+  </section>
+
+  <section class="card" id="result-card" hidden>
+    <h2>3. 冻结分析结果</h2>
+    <div id="result-body"></div>
+    <div class="row">
+      <button id="btn-rerun">重跑本批（验证确定性）</button>
+      <button id="btn-correct" class="warn">另开修正批次</button>
+    </div>
+    <div id="action-msg" class="msg"></div>
+    <details>
+      <summary>运行留痕 runs.log</summary>
+      <pre id="run-log"></pre>
+    </details>
+  </section>
+</main>
+
+<script type="module" src="/static/app.js"></script>
+</body>
+</html>

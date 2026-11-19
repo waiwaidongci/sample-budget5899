@@ -1,0 +1,16 @@
+{
+  "entries": [
+    {
+      "channel": "搜索",
+      "valid_clicks": 1600
+    },
+    {
+      "channel": "信息流",
+      "valid_clicks": 900
+    },
+    {
+      "channel": "社交",
+      "valid_clicks": 500
+    }
+  ]
+}

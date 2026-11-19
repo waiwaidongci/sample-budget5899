@@ -32,3 +32,6 @@ target/
 *.o
 *.obj
 .DS_Store
+
+# clickaudit 运行期批次数据（演示/测试产物）
+data/batches/
